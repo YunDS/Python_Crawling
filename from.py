@@ -10,14 +10,16 @@
 from tkinter import*
 
 root = Tk()
-count = 0
-#라벨
 root.title("동수 왔어요 뿌잉")
 root.geometry("800x600+100+100")
-root.resizable(False, False)
+root.resizable(True, True)
+
+# text=root.Text(root)
+# text.pack()
 
 #대화창
 ent = Entry(root)
+ent.bind("<Return>",)
 ent.config(width= 10)
 ent.get()
 ent.pack()
