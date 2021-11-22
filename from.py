@@ -16,40 +16,23 @@ root.title("동수 왔어요 뿌잉")
 root.geometry("800x600+100+100")
 root.resizable(False, False)
 
-Label = Label(root, text="0")
-Label.pack()
+#대화창
+ent = Entry(root)
+ent.config(width= 10)
+ent.get()
+ent.pack()
 
+def ent_p():
+    a = ent.get()
+    print(a)
 
-#버튼
-# def countplus():
-#     global count
-#     count += 1
-#     Label.config(text=str(count))
+btn1 = Button(root)
+btn1.config(text= "확인")
+btn1.config(command= ent_p)
+btn1.pack()
 
-# def countminus():
-#     global count
-#     count -= 1
-#     Label.config(text=str(count))
-
-# button1 = Button(root, width=10, text="up", overrelief="solid", command=countplus)
-# button1.pack()
-# button2 = Button(root, width=10, text="down", overrelief="solid", command=countminus)
-# button2.pack()
-def buttonClicked():
-    Label.configure(foreground='blue')
-    LabelNew.configure(text=' ' + answer.get())
-
-answer = root.StringVar()
-textbox = Tk.Entry(root, width=12, textvariable=answer)
-textbox.grid(column=0, row=1)
-
-Label = Tk.Label(root, text="정답을 입력하세요")
-Label.grid(column=0, row=0)
-
-LabelNew = Tk.Label(root, text="")
-LabelNew.grid(column=1, row=2)
-
-button = Tk.Button(root, text="클릭", command=buttonClicked)
-button.grid(column=1, row=1)
+btn2 = Button(root)
+btn2.config(text= "출력")
+btn2.pack()
 
 root.mainloop()
